@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Unit Convertor</title>
+        <link rel="stylesheet" href="unit_convertor.css">
+    </head>
+    <body>
+        <h1>Unit convertor</h1>
+
+        <div class="input_fields">
+
+        <!-- Input value -->
+        <label for="value">Enter a Number:</label>
+        <input type="number" id="value">
+        <br>
+
+        <!-- Input unit -->
+        <label for="from_unit">From:</label>
+        <select id="from_unit">
+            <option></option>
+            <option value="miles">Miles</option>
+            <option value="meters">Meters</option>
+            <option value="kilometers">Kilometers</option>
+        </select>
+
+        <!-- Output unit -->
+        <label for="to_unit">To:</label>
+        <select id="to_unit">
+            <option></option>
+            <option value="miles">Miles</option>
+            <option value="meters">Meters</option>
+            <option value="kilometers">Kilometers</option>
+        </select>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <!-- Execute button -->
+         <button onclick="convert()">Convert</button>
+
+        <!-- Output -->
+         <br>
+         <br>
+         <br>
+
+         <p id="output"></p>
+
+         <!-- Ryba s Rakom -->
+          <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAsD4IXDKzlGUIUmcqxZRayMdKeqGj-MHymw&s">
+
+          <br>
+          <br>
+
+          <a href="http://localhost/ryba_s_rakom.html">Ryba s Rakom Convertor</a>
+
+         <script>
+            function convert() {
+                const paragraph = document.getElementById("output");
+                const input_unit = document.getElementById("from_unit").value;
+                const output_unit = document.getElementById("to_unit").value;
+                const number = document.getElementById("value").value;
+
+                if (input_unit === "" || output_unit === "") {
+                    alert("Prázdno zaduní, zaaaaaduní.");
+                }
+                else if (input_unit === output_unit) {
+                    alert("Tak tady je někdo černej. 5=5");
+                }
+                else {
+                    let result;
+                    // From meters
+                    if (input_unit === "meters" && output_unit === "kilometers") {
+                        result = number/1000;
+                    }
+                    else if (input_unit === "meters" && output_unit === "miles") {
+                        result = number/1609.344;
+                    }
+                    // From kilometers
+                    else if (input_unit === "kilometers" && output_unit === "meters") {
+                        result = number*1000;
+                    }
+                    else if (input_unit === "kilometers" && output_unit === "miles") {
+                        result = number/1.609344;
+                    }
+                    // From miles
+                    else if (input_unit === "miles" && output_unit === "kilometers") {
+                        result = number*1.609344;
+                    }
+                    else if (input_unit === "miles" && output_unit === "meters") {
+                        result = number*1609.344;
+                    }
+                    paragraph.innerHTML = result;
+                }
+}
+         </script>
+
+    </body>
+</html>

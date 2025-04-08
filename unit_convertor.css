@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+    background-color:rgb(125, 154, 168);
+}
+
+h1 {
+    font-family: Impact;
+    font-size: 100px;
+}
+
+.input_fields {
+    font-size: 50px;
+}
+
+select {
+    width: 100px;
+    height: 30px;
+}
+
+input {
+    width: 40px;
+    height: 20px;
+}
+
+button {
+    width: 200px;
+    height: 100px;
+    font-size: 50px;
+    border-radius: 15px;
+    background-color:rgb(192, 53, 53)
+}
+
+a {
+    font-size: 30px;
+}

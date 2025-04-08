@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>rybasrakomrybasrakom</title>
+        <link rel="stylesheet" href="ryba_s_rakom.css">
+    </head>
+    <body>
+        <h1>Ryba s Rakom Convertor</h1>
+
+        <div class="input_fields">
+
+        <!-- Input value -->
+        <label for="value">Enter a Dancer:</label>
+        <input type="text" id="value">
+
+        <br>
+        <br>
+
+        <!-- Execute button -->
+         <button onclick="convert()">Find Dance Partner</button>
+
+        <!-- Output -->
+         <p id="output"></p>
+
+         <!-- Ryba s Rakom -->
+          <img id="image" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAsD4IXDKzlGUIUmcqxZRayMdKeqGj-MHymw&s">
+            <br>
+          <a href="http://localhost/unit_convertor.html">Unit Convertor</a>
+
+         <script>
+            function convert() {
+                const paragraph = document.getElementById("output");
+                const dancer = document.getElementById("value").value;
+                const image = document.getElementById("image");
+
+                if (dancer === "") {
+                    alert("Prázdno zaduní, zaaaaaduní.");
+                }
+                else {
+                    let result;
+                    if (dancer === "ryba") {
+                        result = "rak";
+                        image.src="https://home.czu.cz/storage/354/82579_9140-P_clarkii_red.jpg";
+                    }
+                    else if (dancer === "rak") {
+                        result = "ryba";
+                        image.src="https://i.ytimg.com/vi/evRZkSGLJh4/maxresdefault.jpg";
+                    }
+                    else if (dancer === "petruška") {
+                        result = "pasternak";
+                        image.src="https://www.hokejovyarchiv.cz/wp-content/uploads/2024/05/PASTRNAK-David-profil.jpg";
+                    }
+                    else if (dancer === "pasternak") {
+                        result = "petruška";
+                        image.src="https://www.antikavion.cz/storage/images/webp/petruska-olga-hejna-1970-922501-0.jpg.webp";
+                    }
+                    else if (dancer === "cibula" || dancer === "cibule") {
+                        result = "česnek";
+                        image.src="https://static.wikia.nocookie.net/plantsvszombies/images/3/39/Garlic1.png/revision/latest/thumbnail/width/360/height/360?cb=20090521220220";
+                    }
+                    else if (dancer === "česnek") {
+                        result = "cibula";
+                        image.src="https://i.ytimg.com/vi/KmBJTAUXpdU/sddefault.jpg";
+                    }
+                    else if (dancer === "dívčina" || dancer === "dievčina" || dancer === "děvčina") {
+                        result = "kozak";
+                        image.src="https://i.ytimg.com/vi/_uDRj3s7hBU/maxresdefault.jpg";
+                    }
+                    else if (dancer === "kozak" || dancer === "kozák") {
+                        result = "dívčina";
+                        image.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQIxzpS3Y1H-UQj2EObLpbQ-iavFwtrJnpCQ&s";
+                    }
+                    paragraph.innerHTML = result;
+                }
+}
+         </script>
+
+    </body>
+</html>
